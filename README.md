@@ -12,6 +12,7 @@ A collection of Java programs developed for third-semester laboratory work and p
 │   ├── Lab 3/       # 10 Java demonstrations
 │   ├── Lab4/        # 6 Java programs
 │   └── Lab 5/
+│       ├── Main.java  # Vehicle parking system
 │       ├── Q4_Account_Transaction_Report/
 │       │   └── src/
 │       │       ├── Main.java
@@ -36,20 +37,33 @@ A collection of Java programs developed for third-semester laboratory work and p
 | [Lab 2](./1BF25CS059_AYUSH_IYER/Lab%202/) | `Program1.java` (1 program) |
 | [Lab 3](./1BF25CS059_AYUSH_IYER/Lab%203/) | 10 Java demonstrations covering constructors, objects, static members, stacks, and related concepts |
 | [Lab 4](./1BF25CS059_AYUSH_IYER/Lab4/) | `Program1.java` – `Program6.java` (6 programs) |
-| [Lab 5](./1BF25CS059_AYUSH_IYER/Lab%205/) | Q4 Account Transaction Report — original package-based version and updated shared-array version |
+| [Lab 5](./1BF25CS059_AYUSH_IYER/Lab%205/) | Vehicle Parking System and two Q4 Account Transaction Report implementations |
 
-**Total: 53 programs across Labs 1–4**, plus the two Q4 Lab 5 implementations and the standalone `Hello.java` and `area.java` examples.
+**Total: 53 programs across Labs 1–4**, plus three Lab 5 implementations and the standalone `Hello.java` and `area.java` examples.
 
-## Lab 5 — Q4 Account Transaction Report
+## Lab 5 programs
 
-Two implementations are included:
+### 1. Vehicle Parking System — `Main.java`
 
-1. **Original version:** Uses the `transaction` and `reports` packages. The report displays the account number and current balance.
-2. **Updated version:** Maintains transaction records in a shared `static` array in the `Account` class. The report copies the populated entries and displays them in array format using `Arrays.toString()`. Deposits, successful withdrawals, and failed withdrawals are recorded.
+Demonstrates interfaces, inheritance, method implementation, and runtime polymorphism through a parking-charge system.
 
-### Compile and run the original version
+- `ParkingCharge` interface declares `calculateCharge()` and `displayParkingDetails()`.
+- `VehicleParking` is the base class containing vehicle number, type, and parking duration.
+- `TwoWheeler` and `FourWheeler` extend `VehicleParking` and implement `ParkingCharge`.
+- Two-wheelers cost Rs. 20 per hour for the first two hours and Rs. 10 per additional hour.
+- Four-wheelers cost Rs. 50 per hour for the first two hours and Rs. 30 per additional hour.
 
-Run from the repository root:
+Compile and run from the repository root:
+
+```bash
+cd "1BF25CS059_AYUSH_IYER/Lab 5"
+javac Main.java
+java Main
+```
+
+### 2. Q4 Account Transaction Report — Original
+
+Uses the `transaction` and `reports` packages. The report displays the account number and current balance.
 
 ```bash
 cd "1BF25CS059_AYUSH_IYER/Lab 5/Q4_Account_Transaction_Report"
@@ -57,9 +71,9 @@ javac -d out src/transaction/Account.java src/reports/TransactionReport.java src
 java -cp out Main
 ```
 
-### Compile and run the updated array version
+### 3. Q4 Account Transaction Report — Updated Array Version
 
-Run from the repository root:
+Maintains transaction records in a shared `static` array in the `Account` class. The report copies the populated entries and displays them in array format using `Arrays.toString()`. Deposits, successful withdrawals, and failed withdrawals are recorded.
 
 ```bash
 cd "1BF25CS059_AYUSH_IYER/Lab 5/Q4_Account_Transaction_Report_Updated"
